@@ -25,6 +25,7 @@ for ithSubstance in range(nSubstances):
         OBJECT_CONTENTS = N30DAYsubhistYN_DICT['object_contents'][index];
         OBJECT_CONTENTS = OBJECT_CONTENTS.replace('TITLE', substance_index(ithSubstance, 't'));
         OBJECT_CONTENTS = OBJECT_CONTENTS.replace('LOWER', substance_index(ithSubstance, 'l'));
+        # OBJECT_CONTENTS = OBJECT_CONTENTS.replace('UPPER', substance_index(ithSubstance, 'u'));
         dataDict_N30DAYsubhistYN[SUBSTANCE][fieldName] = OBJECT_CONTENTS;
 
 
@@ -38,5 +39,6 @@ for ithSubstance in range(nSubstances):
 
 dataDict_N30DAYsubhistYN = pd.DataFrame.from_dict(dataDict_N30DAYsubhistYN);
 dataDict_N30DAYsubhistYN.to_pickle("./dataDict_N30DAYsubhistYN.pkl")
+
 # dataDict_N30DAYsubhistYN = pd.read_pickle("./dataDict_N30DAYsubhistYN.pkl");
 # dataDict_N30DAYsubhistYN.to_excel("RVHIdatabase_N30DAYsubhistYN_dataDict_N30DAYsubhistYNionary.xlsx");

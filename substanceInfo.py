@@ -2,9 +2,6 @@ from basicInfo import *
 
 # gsheetVars
 
-# creds = ServiceAccountCredentials.from_json_keyfile_name('creds.json', scope)
-# client = gspread.authorize(creds);
-
 SubstanceInfo_WS = client.open("substanceInfo");
 sheet_count = len(SubstanceInfo_WS.worksheets());
 
@@ -48,5 +45,6 @@ for sheet in range(sheet_count):
 # import pandas as pd
 dataDict_substanceInfo = pd.DataFrame.from_dict(dataDict_substanceInfo);
 dataDict_substanceInfo.to_pickle("./dataDict_substanceInfo.pkl")
+
 # dataDict_substanceInfo = pd.read_pickle("./dataDict_substanceInfo.pkl");
 # dataDict_substanceInfo.to_excel("RVHIdatabase_dataDict_substanceInfo_dataDict_substanceInfo.xlsx");

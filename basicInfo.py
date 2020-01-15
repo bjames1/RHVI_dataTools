@@ -25,8 +25,8 @@ sheet = client.open("RVHIdatabase_variableListing")
 # worksheets[6]
 
 DemographicInfo_WS = sheet.get_worksheet(0);
-SubstancesList_WS = sheet.get_worksheet(2);
-N30DAYsubhistYN_WS = sheet.get_worksheet(1);
+SubstancesList_WS = sheet.get_worksheet(1);
+N30DAYsubhistYN_WS = sheet.get_worksheet(2);
 N30DAYsubhistAPD_WS = sheet.get_worksheet(3);
 N30DAYsubhistTPD_WS = sheet.get_worksheet(4);
 N30DAYsubhistDPM_WS = sheet.get_worksheet(5);
@@ -94,11 +94,6 @@ def substance_index(key, case):
             index = substance_pageTitle[key];
 
     return index
-
-
-
-
-
 
 
 cases = ['u', 'l', 't'];
