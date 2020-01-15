@@ -2,7 +2,7 @@ from basicInfo import *
 
 # gsheetVars
 
-substanceInfo = pd.read_pickle("./substanceInfo.pkl");
+dataDict_substanceInfo = pd.read_pickle("./dataDict_substanceInfo.pkl");
 
 dataDict_N30DAYsubhistAPD = {};
 
@@ -29,16 +29,16 @@ for ithSubstance in range(nSubstances):
         dataDict_N30DAYsubhistAPD[SUBSTANCE][fieldName] = OBJECT_CONTENTS;
 
     for exampleType in exampleTypes:
-        substanceInfo[SUBSTANCE][exampleType];
-        exampleList=substanceInfo[SUBSTANCE][exampleType];
+        dataDict_substanceInfo[SUBSTANCE][exampleType];
+        exampleList=dataDict_substanceInfo[SUBSTANCE][exampleType];
         examplePREFIX = itemPREFIX + '_' + exampleType + '_' + SUBSTANCE;
         del dataDict_N30DAYsubhistAPD[SUBSTANCE][examplePREFIX]
         dataDict_N30DAYsubhistAPD[SUBSTANCE][examplePREFIX]=exampleList;
 
 
-    apdUnits = substanceInfo[SUBSTANCE]['apdUnits']
+    apdUnits = dataDict_substanceInfo[SUBSTANCE]['apdUnits']
     apdUnits = apdUnits[0];
-    apdQContents = substanceInfo[SUBSTANCE]['apdQContents']
+    apdQContents = dataDict_substanceInfo[SUBSTANCE]['apdQContents']
     apdQContents = apdQContents[0];
     if apdQContents != None and apdUnits != None:
         apdQContents = apdQContents.replace('UNITS', apdUnits);

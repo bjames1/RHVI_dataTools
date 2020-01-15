@@ -8,8 +8,8 @@ from basicInfo import *
 SubstanceInfo_WS = client.open("substanceInfo");
 sheet_count = len(SubstanceInfo_WS.worksheets());
 
+dataDict_substanceInfo = {};
 
-substanceInfo = {};
 for sheet in range(sheet_count):
     SUBSTANCE = substance_index(sheet, 'u');
 
@@ -42,11 +42,11 @@ for sheet in range(sheet_count):
 
                                 }};
 
-    substanceInfo.update(exampleInfo);
+    dataDict_substanceInfo.update(exampleInfo);
 
 
 # import pandas as pd
-substanceInfo = pd.DataFrame.from_dict(substanceInfo);
-substanceInfo.to_pickle("./substanceInfo.pkl")
-# substanceInfo = pd.read_pickle("./substanceInfo.pkl");
-# substanceInfo.to_excel("RVHIdatabase_substanceInfo_substanceInfo.xlsx");
+dataDict_substanceInfo = pd.DataFrame.from_dict(dataDict_substanceInfo);
+dataDict_substanceInfo.to_pickle("./dataDict_substanceInfo.pkl")
+# dataDict_substanceInfo = pd.read_pickle("./dataDict_substanceInfo.pkl");
+# dataDict_substanceInfo.to_excel("RVHIdatabase_dataDict_substanceInfo_dataDict_substanceInfo.xlsx");

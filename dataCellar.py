@@ -1,9 +1,9 @@
 import pandas as pd
 
-substanceInfo = pd.read_pickle("./substanceInfo.pkl");
-# substanceInfo.head()
-# substanceInfo.columns
-# substanceInfo.index.values.tolist()
+dataDict_substanceInfo = pd.read_pickle("./dataDict_substanceInfo.pkl");
+# dataDict_substanceInfo.head()
+# dataDict_substanceInfo.columns
+# dataDict_substanceInfo.index.values.tolist()
 
 dataDict_N30DAYsubhistYN = pd.read_pickle("./dataDict_N30DAYsubhistYN.pkl");
 # dataDict_N30DAYsubhistYN.head()

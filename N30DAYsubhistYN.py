@@ -2,7 +2,7 @@ from basicInfo import *
 
 # gsheetVars
 
-substanceInfo = pd.read_pickle("./substanceInfo.pkl");
+dataDict_substanceInfo = pd.read_pickle("./dataDict_substanceInfo.pkl");
 
 dataDict_N30DAYsubhistYN = {};
 
@@ -29,8 +29,8 @@ for ithSubstance in range(nSubstances):
 
 
     for exampleType in exampleTypes:
-        substanceInfo[SUBSTANCE][exampleType];
-        exampleList=substanceInfo[SUBSTANCE][exampleType];
+        dataDict_substanceInfo[SUBSTANCE][exampleType];
+        exampleList=dataDict_substanceInfo[SUBSTANCE][exampleType];
         examplePREFIX = itemPREFIX + '_' + exampleType + '_' + SUBSTANCE;
         del dataDict_N30DAYsubhistYN[SUBSTANCE][examplePREFIX]
         dataDict_N30DAYsubhistYN[SUBSTANCE][examplePREFIX]=exampleList;
