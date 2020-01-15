@@ -6,7 +6,6 @@ substanceInfo = pd.read_pickle("./substanceInfo.pkl");
 
 dataDict_N30DAYsubhistAPD = {};
 
-
 for ithSubstance in range(nSubstances):
 
     fieldNames=[];
@@ -35,6 +34,20 @@ for ithSubstance in range(nSubstances):
         examplePREFIX = itemPREFIX + '_' + exampleType + '_' + SUBSTANCE;
         del dataDict_N30DAYsubhistAPD[SUBSTANCE][examplePREFIX]
         dataDict_N30DAYsubhistAPD[SUBSTANCE][examplePREFIX]=exampleList;
+
+
+    apdUnits = substanceInfo[SUBSTANCE]['apdUnits']
+    apdUnits = apdUnits[0];
+    apdQContents = substanceInfo[SUBSTANCE]['apdQContents']
+    apdQContents = apdQContents[0];
+    if apdQContents != None and apdUnits != None:
+        apdQContents = apdQContents.replace('UNITS', apdUnits);
+        apdQContents = apdQContents.replace('UPPER', substance_index(ithSubstance, 'u'));
+        apdQContents = apdQContents.replace('LOWER', substance_index(ithSubstance, 'l'));
+
+        RESPONSE_GROUP = 'N30DAYsubhistAPD_responseGroup_' + SUBSTANCE;
+        dataDict_N30DAYsubhistAPD[SUBSTANCE][RESPONSE_GROUP] = apdQContents;
+
 
 
 dataDict_N30DAYsubhistAPD = pd.DataFrame.from_dict(dataDict_N30DAYsubhistAPD);
