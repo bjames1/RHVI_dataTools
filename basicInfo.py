@@ -98,6 +98,9 @@ def substance_index(key, case):
 
 
 
+
+
+
 cases = ['u', 'l', 't'];
 exampleTypes = ['genericNames', 'brandNames', 'aliasNames'];
 
