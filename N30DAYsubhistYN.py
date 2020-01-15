@@ -27,7 +27,6 @@ for ithSubstance in range(nSubstances):
         OBJECT_CONTENTS = OBJECT_CONTENTS.replace('LOWER', substance_index(ithSubstance, 'l'));
         dataDict[SUBSTANCE][fieldName] = OBJECT_CONTENTS;
 
-
     for exampleType in exampleTypes:
         substanceInfo[SUBSTANCE][exampleType];
         exampleList=substanceInfo[SUBSTANCE][exampleType];
